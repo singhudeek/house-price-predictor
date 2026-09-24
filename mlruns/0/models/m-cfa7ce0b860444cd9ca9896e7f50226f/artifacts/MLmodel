@@ -1,0 +1,25 @@
+artifact_path: /Users/udk/Desktop/Learning/DevOps/mlOps/house-price-predictor/mlruns/0/models/m-cfa7ce0b860444cd9ca9896e7f50226f/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - xgboost.core.Booster
+    - xgboost.sklearn.XGBRegressor
+mlflow_version: 3.16.1
+model_id: m-cfa7ce0b860444cd9ca9896e7f50226f
+model_size_bytes: 35709
+model_uuid: m-cfa7ce0b860444cd9ca9896e7f50226f
+prompts: null
+run_id: ce0618066bad45418f6fdc60ea7028f9
+utc_time_created: '2026-09-21 07:21:10.348783'
