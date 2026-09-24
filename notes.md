@@ -33,6 +33,39 @@ Data Scinest
 
         WeB UI ( Web Client) : we can use streamlit lib to build the ui
 
+    Steamlit lib to create ui and FastAPI for RestAPI
+
+    ML workflow pipeline using github action : -
+        ML workflow : 
+            Data - > ingest/process data - > Future Enginering - > model training - > package -> (CD) deployment
+        Modular Pipeline - > 
+            Data Ingestion and processing pipeline : 
+            Feature Enginering Pipeline :
+            Model Training pipeline: 
+                1. register model ( eg. MLFlow Registery , SageMaker)
+            Model Packaging  & CI Pipeline
+            Deployment Pipeline
+
+        DAG Tool : mostely the argo tool, which is directed going to one direction ( e.g Argo Workflow, kubeflow, apache workflow, metaflow)
+
 
    
 DevOps Engineer
+
+
+Workflow sample
+
+
+name : test pipeline
+on: 
+    push:
+     brnach:[main]
+    pull_request:
+      branch:[main]
+
+jobs:
+  build:
+    run_on : ubuntu-latest
+    steps:
+    - name : checkout code
+      uses: action/checkout@v3
