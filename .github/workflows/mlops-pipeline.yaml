@@ -117,7 +117,6 @@ jobs:
           docker stop mlflow-server || true
           docker rm mlflow-server || true
 
-
   build-and-publish:
     runs-on: ubuntu-latest
     needs: model_training
@@ -141,12 +140,11 @@ jobs:
           name: trained-model
           path: models/
 
-       - name: Download Preprocessor
+      - name: Download Preprocessor
         uses: actions/download-artifact@v4
         with:
           name: preprocessor
           path: models/trained/
-
 
       - name: Build and test docker image
         run: |
@@ -176,5 +174,3 @@ jobs:
           docker tag docker.io/${{ vars.DOCKER_USERNAME }}/house-price-predictor:${COMMIT_SHA} docker.io/${{ vars.DOCKER_USERNAME }}/house-price-predictor:latest
           docker push docker.io/${{ vars.DOCKER_USERNAME }}/house-price-predictor:${COMMIT_SHA}
           docker push docker.io/${{ vars.DOCKER_USERNAME }}/house-price-predictor:latest
-
-          
