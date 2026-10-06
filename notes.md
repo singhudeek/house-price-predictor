@@ -69,3 +69,5 @@ jobs:
     steps:
     - name : checkout code
       uses: action/checkout@v3
+
+workflow_dispatch -- allow to run the workflow manually , also we can define input variables 
