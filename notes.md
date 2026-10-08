@@ -71,3 +71,15 @@ jobs:
       uses: action/checkout@v3
 
 workflow_dispatch -- allow to run the workflow manually , also we can define input variables 
+
+
+helm upgrade --install prom \
+ -n monitoring \
+ --create-namespace \
+ prometheus-community/kube-prometheus-stack \
+ --set grafana.service.type=NodePort \
+ --set grafana.service.nodePort=30200 \
+ --set prometheus.service.type=NodePort \
+ --set prometheus.service.nodePort=30300
+
+ prom-operator
